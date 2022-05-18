@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Digital';
+    src: local('Digital'), url(Digital.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Segment7';
+    src: local('Segment7'), url(Segment7.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Roboto'; font-style: normal; font-weight: 400;
+    src: local('Roboto'), url(Roboto.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; font-family: Roboto; color: white; background-color: black; font-size: 1.6vw;}
+.text3D {text-shadow: 0 1px 0 #eee, 0 2px 0 #eee,
+    0 3px 0 #ddd, 0 4px 0 #ddd,
+    0 5px 0 #ccc, 0 6px 0 #ccc,
+    0 7px 0 #bbb, 0 8px 0 #bbb,
+    0 9px 0 #aaa, 0 10px 0 #aaa,
+    0 11px 0 #999, 0 12px 0 #999,
+    0 13px 0 #888, 0 14px 0 #888,
+    0 20px 30px rgba(0, 0, 0, 0.5);}
+table {border-spacing: 0px; font-size: 1.2vw;}
+tr {vertical-align: top;}
+td {padding: 0px;}
+.widthAvailable { width: 100%; }
+.widthTiers { width: 33%; padding-top:12px; padding-bottom: 12px;}
+.widthTiers:hover { background-color: blue;}
+.textCenter { text-align: center; }
+.bigTitle { font-size: 4vw; text-shadow: 0px 0px 10px rgb(255, 0, 0), -5px 0px 20px rgb(255, 0, 0), -10px -10px 30px rgb(255, 0, 0), 5px 0px 20px rgb(255, 0, 0), 10px 10px 30px rgb(255, 0, 0);}
+.subTitle {font-size: 3vw; text-shadow: 0px 0px 10px rgb(0, 0, 255), -5px 0px 20px rgb(0, 0, 255), -10px 0px 30px rgb(0, 0, 255), 5px 0px 20px rgb(0, 0, 255), 10px 0px 30px rgb(0, 0, 255);}
+
+.optionTitle {font-size: 3vw; text-shadow: 0px 0px 10px rgb(229, 204, 54), -5px 0px 20px rgb(229, 204, 54), -10px 0px 30px rgb(229, 204, 54), 5px 0px 20px rgb(229, 204, 54), 10px 0px 30px rgb(229, 204, 54);}
+.optionText { margin-left: 12vw;}
+.button {border-radius: 25px; border: 2px solid #E5CC68; padding-left:20px; padding-right: 20px; display: inline; }
+.button:hover {background-color: #E5CC68; color: black;}
+.value {font-family: Segment7; font-size: 3.7vw;}
+p {text-align: justify; padding-left: 12px; padding-right: 12px; margin:6px;}
+.title {color: #E5CC68; font-size: 2.5vw; text-shadow:  2px 2px 5px rgb(179, 154, 54);}
+#Segment7 { font-family: Segment7; position: absolute; right: 50px; top: -20px; width: 100px;}
+#downright { position: absolute; right: 6px; bottom: 6px; }
+#theDart { position: absolute; right: 50px; top: 200px; }
+.cancel {position: absolute; left: 6px; bottom: 6px; border-radius: 25px; border: 2px solid #ad2121; padding:20px;}
+.cancel:hover {background-color: #ad2121;}
+#idOptionsIcon {position: absolute; left: 6px; top: 6px;}
+#idPlayersIcon {position: absolute; left: 6px; top: 6px;}
+.valid {position: absolute; right: 6px; bottom: 6px; border-radius: 25px; border: 2px solid #49ad21; padding:20px;}
+.valid:hover {background-color: #49ad21;}
+.removePlayer {border-radius: 25px; border: 2px solid #E5CC68; padding:20px;}
+.removePlayer:hover {background-color: #ad2121; border: 2px solid #FF0000; text-decoration-line:line-through;}
+hr { margin: 50px;}
+.addPlayer {border-radius: 25px; border: 2px solid #E5CC68; padding:20px;}
+.addPlayer:hover {background-color: #49ad21; border: 2px solid #00FF00; }

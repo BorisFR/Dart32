@@ -1,0 +1,179 @@
+RAM:   [=         ]  13.3% (used 43664 bytes from 327680 bytes)
+Flash: [=======   ]  73.8% (used 967598 bytes from 1310720 bytes)
+
+RAM:   [==        ]  17.0% (used 55544 bytes from 327680 bytes)
+Flash: [=======   ]  73.8% (used 967710 bytes from 1310720 bytes)
+
+11880
+
+BT Player
+Choisir le nombre de joueurs
+Voir le score des autres joueurs
+
+BT Start
+Démarre
+passe au joueur suivant
+
+BT GAME
+Choisir le mode de jeu
+
+
+
+Voir le score de tous les joueurs
+
+
+
+jeu 01 (zero one): de 301, 501, 701, 901, 1101 et 1501
+double IN : ne décompte que si on fait un double
+double OUT : doit finir par un double
+on déompte simplement les points
+à la fin, si < 0 alors on revient au score d'avant : c'est un BUST
+
+jeu count-up: simple, en solo pour s'entrainer
+8 round (3 flechettes)
+on cumule simplement l'ensemble des lancers
+résultats :
+Joueur pro international!
+Master	1000 ou plus
+Presque un pro!Almost a pro
+Avancé	800 ou plus
+Instructeur
+Intermédiaire	600 ou plus
+Commence à accrocher!
+Débutant	400 ou plus
+Première fois
+Novice	Moins de 300
+
+BULL : cible du milieu = 50
+au cricket, l'intérieur est double
+
+https://www.dartslive.com/beginner/fr/cricket/
+
+
+
+
+  /*
+        for pinout in outs:
+            GPIO.setup(pinout,GPIO.OUT)
+            GPIO.output(pinout,GPIO.HIGH)
+            for pinin in ins:
+                GPIO.setup(pinin,GPIO.IN)
+                if(GPIO.input(pinin)):
+                    dartTouch(pinin,pinout)
+            GPIO.output(pinout,GPIO.LOW)
+*/
+
+  for (byte o = 0; o < ROWS; o++)
+  {
+    digitalWrite(pinsOUT[o], HIGH);
+
+    for (byte i = 0; i < COLUMNS; i++)
+    {
+      uint8_t index = o * COLUMNS + i;
+      if (digitalRead(pinsIN[i]) == HIGH)
+      {
+        if (press[index] == 0)
+        {
+          press[index] = millis();
+          //Serial.print(" * OUT: " + String(pinsOUT[o]) + "\tIN: " + String(pinsIN[i]) + " => " + keymap[o][i]);
+          Serial.print(" * OUT: " + String(o) + "\tIN: " + String(pinsIN[i]) + " => " + keymap[o][i]);
+          ws.textAll("O" + String(keymap[o][i]));
+          //ledON();
+          oneTouch = true;
+        }
+        else
+        {
+          // debouce
+          if (!displayTooLong)
+          {
+            if (millis() - press[index] > DEBOUNCE_DELAY)
+            {
+              Serial.println("*** TOO LONG ***");
+              displayTooLong = true;
+              ws.textAll("E" + String(keymap[o][i]));
+            }
+          }
+        }
+      }
+      else
+      {
+        if (press[index] > 0)
+        {
+          if (millis() - press[index] > DEBOUNCE_DELAY)
+          {
+            press[index] = 0;
+            //ledOFF();
+            oneTouch = false;
+            Serial.println(" OFF");
+            displayTooLong = false;
+            ws.textAll("X" + String(keymap[o][i]));
+          }
+        }
+      }
+    } // for COLUMNS
+
+    digitalWrite(pinsOUT[o], LOW);
+    //Serial.println();
+  } // for ROWS
+
+
+écran
+marron  23
+rouge   18
+mauve   22
+bleu    27
+vert    13
+orange  19
+jaune   5
+
+
+/*#define LED_BOARD 1
+unsigned long lastBlink;
+#define BLINK_DELAY 200
+bool ledIsOn = false;*/
+
+/*
+void setupLed()
+{
+  pinMode(LED_BOARD, OUTPUT);
+}
+
+void ledON()
+{
+  digitalWrite(LED_BOARD, HIGH);
+  ledIsOn = true;
+}
+
+void ledOFF()
+{
+  digitalWrite(LED_BOARD, LOW);
+  ledIsOn = false;
+}
+
+void ledLoop()
+{
+  if (oneTouch)
+    return;
+  if (millis() - lastBlink > BLINK_DELAY)
+  {
+    lastBlink = millis();
+    if (ledIsOn)
+      ledOFF();
+    else
+      ledON();
+  }
+}
+*/
+
+//                x   x   x   x   x   x   x
+//byte pinsOUT[] = {32, 33, 25, 26, 27, 14, 12};
+//byte pinsIN[] = {23, 22, 21, 19, 18, 17, 16, 4, 15, 13};
+//               x   x   x   x   x   x   x   x  x   x
+    /*for (byte i = 0; i < ROWS; i++)
+  {
+    //pinMode(pinsOUT[i], OUTPUT);
+    //digitalWrite(pinsOUT[i], LOW);
+    pcfOUT.write(i, LOW);
+  }*/
+    /*for (byte i = 0; i < COLUMNS; i++)
+    pinMode(pinsIN[i], INPUT_PULLDOWN);*/

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Dart32</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, height=device-height" />
+    <link href="css.css" rel="stylesheet" />
+    <script type="text/javascript" async src="js.js"></script>
+</head>
+
+<body>
+    <div id="chooseGame">
+        <p class="bigTitle textCenter">Dart 32</p>
+        <p class="subTitle textCenter">Choisissez votre jeu</p>
+        <table class="widthAvailable textCenter">
+            <tr>
+                <td id="idGameUp" class="widthTiers"><img src="dart_game_up.png" />
+                    <div class="title">Débutant</div>
+                    <p>Le COUNT-UP est parfait pour s'entraîner seul.
+                        Le jeu est simple, c'est simplement l'addition des points des 24 lancers.</p>
+                    <p>En partant de 0, les joueurs marquent et accumulent des points.
+                        Trois lancers par round et les joueurs essaient d'obtenir le plus de points en 8 rounds.</p>
+                    <p>Partis de 0 points, le joueur avec le plus de points gagne.</p>
+                    <p>Match sur 8 rounds, 3 lancers par round.</p>
+                </td>
+                <td id="idGame01" class="widthTiers"><img src="dart_game_01.png" />
+                    <div class="title">Classique</div>
+                    <p>Très simple! Le 01 est un des jeux standard aux fléchettes.
+                        Ce jeu est joué dans les principales compétitions.</p>
+                    <p>Il y a 6 types de 01: 301, 501, 701, 901, 1101 et 1501.</p>
+                    <p>Le jeu commence avec un nombre donné de points.
+                        Si le jeu est un 301, tous les joueurs commencent avec 301 points. Le nom du jeu est le
+                        nombre
+                        de
+                        points de départ.
+                        Le nombre touché est soustrait aux points de départs, et le jeu se termine quand le score
+                        arrive
+                        à 0
+                        exactement !
+                        Le premier joueur à réduire son score à 0 gagne !</p>
+                    <p>Quand vos points descendent en dessous de zéro, c'est un BUST.
+                        Dans le cas d'un BUST, votre tour s'arrête, même si vous n'avez pas lancé vos 3 flèches.
+                        Votre
+                        prochain tour
+                        recommencera au score que vous aviez avant le BUST.</p>
+                </td>
+                <td id="idGameCricket" class="widthTiers"><img src="dart_game_cricket.png" />
+                    <div class="title">Habitué</div>
+                    <p>Essayez le CRICKET dès que vous vous êtes habitué aux fléchettes.</p>
+                    <p>Il faut connaître quelques règles pour ce jeu stratégique, mais une fois apprise, c'est un
+                        jeu
+                        très prenant.</p>
+                    <p>Les nombres utilisés sont 15, 16, 17, 18, 19, 20 et la BULL.
+                        Les autres nombres ne rapportent pas de points.</p>
+                    <p>Quand vous marquez 3 marques dans un nombre, celui-ci est ouvert. Atteindre ce nombre à
+                        partir de
+                        ce moment vous
+                        rapportera des points.</p>
+                    <p>Si votre adversaire met 3 marques dans ce nombre, il est fermé. La zone devient "invalide".
+                        C'est
+                        une "fermeture".</p>
+                    <p>Le joueur qui a le plus de points lorsque tous les nombres sont fermés, ou lorsque le nombre
+                        de
+                        round limite est
+                        atteint, gagne.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="gameOptions">
+        <p class="bigTitle textCenter">Dart 32</p>
+        <p id="idGameOptions" class="subTitle textCenter">Options</p>
+        <br />
+        <p class="optionTitle">Nombre de tours</p>
+        <p class="optionText">pas de limite</p>
+        <p class="optionText"><span class="button">-</span> <span class="value">00</span> <span class="button">+</span>
+        </p>
+        <img id="idOptionsIcon" />
+        <div id="cancelOptions" class="cancel">Annuler</div>
+        <div id="validOptions" class="valid">Valider</div>
+    </div>
+
+    <div id="idPlayers">
+        <p class="bigTitle textCenter">Dart 32</p>
+        <p id="idGamePlayers" class="subTitle textCenter">Choix des joueurs</p>
+        <br />
+        <p class="optionTitle">Joueurs sélectionnés</p>
+        <br />
+        <p id="selectedPlayers">
+            <span id="p1" class="removePlayer">Boris</span>
+        </p>
+        <hr />
+        <p class="optionTitle">Joueurs disponibles</p>
+        <br />
+        <p id="availablePlayers"><span class="addPlayer">Chno</span> <span class="addPlayer">Manu</span> <span
+                class="addPlayer">Ubik</span>
+            <span class="addPlayer">Djeff</span> </p>
+        <br />
+        <p><span class="addPlayer">Nouveau joueur</span></p>
+        <img id="idPlayersIcon" />
+        <div id="cancelPlayers" class="cancel">Annuler</div>
+        <div id="validPlayers" class="valid">Valider</div>
+    </div>
+
+    <canvas id="theCanvas"></canvas>
+    <div style="font-family: Digital;">&nbsp;</div>
+    <div id="downright">&nbsp;</div>
+    <div id="Segment7">&nbsp;</div>
+    <img id="theDart" src="dart.png" />
+</body>
+
+</html>
